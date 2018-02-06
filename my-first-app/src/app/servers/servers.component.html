@@ -1,0 +1,25 @@
+<button class="btn btn-primary" [disabled]="allowAddServer">Add Server</button>
+<br>
+<label for="1">Using $event to retrieve data and display</label>
+<input
+  id="1"
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)" >
+<p> {{ serverCreationStatus }} </p>
+<hr>
+
+<label for="2">Using twoWayDataBinding to connect html and controller</label>
+<input
+  id="2"
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverCreationStatus2" >
+<p> {{ serverCreationStatus2 }} </p>
+<hr>
+
+<button class="btn btn-primary" (click)="displayVersion()" >Using ngIf</button>
+<p *ngIf="showVersion"> The server is running! </p>
+
+<app-server></app-server>
+<app-server></app-server>
